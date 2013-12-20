@@ -45,7 +45,7 @@ var mailPost = function () {
                 if (msg.send) { 
                     $(progressScreen.find('p')).text('送信しました');
                     setTimeout(function () {
-                        location.href = '/create';
+                        location.href = '/';
                     }, 2000);
                 }
             }

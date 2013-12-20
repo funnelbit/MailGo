@@ -29,10 +29,8 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/', routes.index);
-app.get('/users', user.list);
-app.get('/create', mail.create);
-app.get('/show_user_list', mail.show_user_list);
+app.get('/', mail.create);
+//app.get('/show_user_list', mail.show_user_list);
 app.post('/add_user_list', mail.add_user_list);
 app.post('/send', mail.send);
 
