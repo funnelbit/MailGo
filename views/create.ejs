@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <link rel='stylesheet' href='/stylesheets/mail.css' />
+  </head>
+    <body>
+
+    <div id="progress-screen" style="display: none">
+      <p>ちょっとまってね</p>
+    </div>
+
+      <form id="user-list-form" action="add_user_list" method="POST">
+        <%
+          for( var i in user_list ) {　%>
+            <div class="row">
+              <input type='text' name='name' value="<%= user_list[i].name %>" />
+              <input type='text' name='mail' value="<%= user_list[i].mail %>" />
+            </div>
+            <% 
+          }
+        %>
+        
+        <div class=row>
+          <input type='text' name='name' value="" />
+          <input type='text' name='mail' value="" />
+        </div>
+ 
+        <input type="submit" value="リスト変更"/>
+      </form>
+
+      </form>
+      <form id="mail-post-form" action="/send" method="POST">
+        <input type="text" name="mail-title" />
+        <input type="text" name="mail-body" />
+        <input type="submit" value="✌(◔౪◔ )✌">
+      </form>
+        
+      <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+      <script src="/javascripts/mail.js"></script>
+    </body>
+</html>
